@@ -1,0 +1,76 @@
+<!--<app-header></app-header>-->
+<div class="">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="login-form mx-auto">
+                <h2 class="login-header">Đăng nhập</h2>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" [(ngModel)]="phone" (input)="onPhoneChange()" name="phone"
+                        id="phone" placeholder="Phone" required>
+                    <div class="divider-nospace"></div>
+                    <p class="text-danger" *ngIf="phone.length>0&&phone.length<10">số điện thoại phải đủ 10 ký tự</p>
+                    <p class="text-danger" *ngIf="phone.length>10">số đện thoại không quá 10 ký tự</p>
+                </div>
+                <div class="mt-5"></div>
+                <div class="form-group password-field">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" placeholder="Ít nhất 5 ký tự" [(ngModel)]="password" name="password"
+                        class="form-control" id="password">
+                    <i class="password-toggle fas fa-eye-slash"
+                        style="padding-top: 20px;width: auto; height: auto;"></i>
+                    <div class="divider-nospace"></div>
+                    <p class="text-danger" *ngIf="password.length>0&&password.length<5">mật khẩu ít nhất 5 ký tự</p>
+
+                </div>
+                <div class="form-group">
+                    <div class="form-check checkbox-text">
+                        <span style="display: flex;">
+                            <input type="checkbox" class="form-check-input"
+                                   [(ngModel)]="rememberMe"
+                                   id="remember">
+                            <label class="form-check-label text-start" for="remember">
+                                Ghi nhớ đăng nhập </label>
+                        </span>
+                        <a href="#" class="register-link">Quên mật khẩu</a>
+                    </div>
+                </div>
+                <button type="button" (click)="onclickLogin()" class="login-button" style="margin-bottom: 20px;">Đăng
+                    nhập</button>
+                <div class="divider"></div>
+                <div class="social-auth-links text-center mb-3">
+                    <a href="#" class="btn btn-block btn-danger" style="width: 100%;margin-top: 20px; ">
+                        <i class=" fab fa-facebook mr-2"></i> Sign in using Facebook
+                    </a>
+                    <br>
+
+                        <a  id="google-btn" class="btn btn-block btn-primary" style="width: 100%;margin-top: 20px; ">
+                        </a>
+
+                </div>
+
+                <!--/.social-auth-links-->
+                <!--<div class="form-group">
+                    <select class="form-control text-md-center mb-3"
+                            [(ngModel)]="selectedRole"
+                            style="background-color:rgb(0, 123, 127);">
+                        <option selected disabled style="background-color: aqua;">Quyền đăng nhập</option>
+                        <option *ngFor="let role of roles" [ngValue]="role">
+                          {{role.name}}
+                        </option>
+                    </select>
+                </div>-->
+
+                <div class="divider"></div>
+                <p class="text-center">Bạn chưa đăng ký? <span>
+                        <a (click)="openformregister()" href="javascript:" class="register-link">Tạo tài
+                            khoản</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<app-footer></app-footer>-->
+
+
+<!--daksndjkasnkjasdk-->

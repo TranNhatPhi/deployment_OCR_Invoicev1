@@ -1,0 +1,55 @@
+    <app-header></app-header>
+    <div class="container">
+      <h3>Chọn ảnh hóa đơn bạn nhé</h3>
+      <!-- Hiển thị ảnh gốc preview -->
+      <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="file" (change)="onFileChange($event)" class="form-control" formControlName="myfile" />
+          <div *ngIf="uploadForm.controls['myfile'].hasError('required') && uploadForm.controls['myfile'].touched" class="text-danger">
+            Vui lòng chọn ảnh
+          </div>
+        </div>
+
+
+        <div class="d-flex justify-content-between mt-3">
+        <button type="reset" class="btn btn-info"><i class="fa fa-eraser"></i> Xóa</button>
+        <button type="submit" class="btn btn-info" [disabled]="uploadForm.invalid"><i class="fa fa-database"></i> Kiểm tra</button>
+        </div>
+      </form>
+
+      <div class="result" *ngIf="invoiceData">
+        <!-- Hiển thị hình ảnh nếu có URL -->
+        <img [src]="'http://localhost:5000/api/uploads/' + invoiceData.image_url" alt="Processed Invoice" class="img-fluid" />
+
+        <h4>Kết quả nhận diện hóa đơn:</h4>
+        <!-- Hiển thị ảnh gốc đã chọn -->
+        <div *ngIf="imagePreviewUrl">
+          <h5>Ảnh Gốc:</h5>
+          <img [src]="imagePreviewUrl" alt="Original Invoice" class="img-fluid" />
+        </div>
+
+        <!-- Hiển thị hình ảnh nếu có URL -->
+        <img [src]="'http://localhost:5000/api/uploads/' + invoiceData.detected_image_url" alt="Processed Invoice" class="img-fluid" />
+
+        <table class="table table-striped mt-4">
+          <thead>
+          <tr>
+            <th>Thông tin</th>
+            <th>Giá trị</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let key of invoiceData | keyvalue">
+            <td>{{ key.key }}</td>
+            <td>
+              <ul *ngIf="Array.isArray(key.value)">
+                <li *ngFor="let item of key.value">{{ item }}</li>
+              </ul>
+              <span *ngIf="!Array.isArray(key.value)">{{ key.value }}</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>

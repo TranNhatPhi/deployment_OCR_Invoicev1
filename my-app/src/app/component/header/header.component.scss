@@ -1,0 +1,104 @@
+header {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(173, 178, 203);
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.navbar .container {
+  background-color: rgba(0, 0, 0, 0) !important;
+
+}
+
+.navbar .container .navbar-brand {
+  color: rgb(173, 178, 203);
+}
+
+.navbar .container .navbar-nav .nav-link {
+  color: rgb(217, 219, 231);
+  border-radius: 18px;
+  padding: 8px 16px;
+}
+
+.navbar .container .navbar-nav .nav-link.active {
+  //background-color: rgb(86, 38, 191) !important;
+  background-color: rgb(117, 255, 217) !important;
+
+  color: white !important;
+}
+.nav-item.active {
+  //background-color: rgb(86, 38, 191) !important;
+  background-color: rgb(117, 255, 217) !important;
+  color: white !important;
+}
+
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #fff;
+  /* Màu chữ khi hover */
+  background-color: rgba(128, 0, 255);
+  /* Màu nền khi hover */
+  border-radius: 5px;
+  /* Bo góc */
+  transition: all 0.3s ease;
+  /* Hiệu ứng chuyển đổi */
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.round-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.round-button:hover {
+  background-color: #0056b3;
+}
+
+.round-button:focus {
+  outline: none;
+}
+.chatBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 50px;
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+}
+/* Add this CSS to your project's stylesheet */
+
+.popover-list {
+  padding: 10px;
+}
+.popover-body {
+  padding: 0;
+}
+.popover-item {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.popover-item:hover {
+  background-color: #f0f0f0;
+  color:#4568dc;
+  /* Change text color to red on hover */
+}

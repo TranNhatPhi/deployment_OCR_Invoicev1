@@ -1,0 +1,20 @@
+<div class="chat-container" *ngIf="showChat">
+  <div class="chat-header">
+    <h4>Chat with
+      <select [(ngModel)]="selectedChatbot">
+        <option value="chatgpt">GPT-CHATBOT</option>
+        <option value="chatgemini">GEMINI-CHATBOT</option>
+      </select>
+    </h4>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div *ngFor="let msg of messages" [ngClass]="{'chat-message': true, 'user': msg.sender === 'user', 'gpt': msg.sender === 'gpt', 'gemini': msg.sender === 'gemini', 'error': msg.sender === 'error'}">
+      <div class="message-content">{{ msg.content }}</div>
+      <div class="timestamp">{{ msg.timestamp | date:'short' }}</div>
+    </div>
+  </div>
+  <div class="chat-footer">
+    <textarea [(ngModel)]="question" (keydown.enter)="sendButton.click()" placeholder="Enter your request here..."></textarea>
+    <button (click)="send()" #sendButton>Send</button>
+  </div>
+</div>

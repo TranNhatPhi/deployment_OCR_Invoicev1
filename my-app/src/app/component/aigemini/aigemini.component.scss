@@ -1,0 +1,109 @@
+.textchange {
+    margin-top: 50px;
+    align-content: center;
+    text-align: center;
+    background: linear-gradient(to right, rgb(131, 253, 0), rgb(0, 221, 233));
+    background-clip: text;
+    color: transparent;
+    /* Ẩn màu chữ gốc */
+}
+
+.form-1 {
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 50px;
+    /* phần tử trở thành "sticky" khi chạm vào đầu trang */
+    background-color: transparent;
+    /* màu nền */
+    padding: 40px;
+    /* khoảng cách trong */
+    display: inline-block;
+    /* sử dụng flexbox */
+    justify-content: space-between;
+    /* tạo khoảng cách giữa các phần tử */
+    align-items: center;
+
+}
+
+#message-input {
+    width: 1000px;
+    // background: linear-gradient(to right, rgb(48, 0, 126), rgb(226, 14, 169));
+    background-color: rgb(12, 12, 55);
+    //background: linear-gradient(to right, rgb(84, 11, 219), rgb(62, 0, 106));
+    border-radius: 20px;
+    height: 50px;
+    border: 1px solid rgb(32, 34, 60);
+    text-emphasis-style: none;
+    align-items: center;
+}
+
+
+button {
+    background: linear-gradient(to right, rgb(98, 0, 125), rgb(51, 2, 130));
+    height: 50px;
+    margin-left: 10px;
+    margin-top: -5px;
+    width: 100px;
+}
+
+.chat-input {
+    margin-top: 1000px;
+    background-position: center;
+    margin-left: 100px;
+
+}
+
+.user-bot {
+    margin-left: 150px;
+}
+
+
+.blue {
+    color: rgb(26, 3, 72);
+}
+
+.purple {
+    color: rgb(0, 221, 233);
+}
+
+#send-button:disabled {
+    background: grey;
+    cursor: not-allowed;
+}
+
+.name1 {
+    background: linear-gradient(to top right, #4568dc, #b06ab3);
+    color: transparent;
+    width: 200px;
+    margin-left: 150px;
+
+}
+
+.name2 {
+    background: linear-gradient(to top right, #4568dc, #b06ab3);
+    color: transparent;
+    width: 400px;
+    margin-left: 150px;
+}
+
+.name3 {
+    background: linear-gradient(to top right, #4568dc, #b06ab3);
+    color: transparent;
+    width: 600px;
+    margin-left: 150px;
+}
+
+.name4 {
+    background: linear-gradient(to top right, #4568dc, #b06ab3);
+    color: transparent;
+    width: 800px;
+    margin-left: 150px;
+}

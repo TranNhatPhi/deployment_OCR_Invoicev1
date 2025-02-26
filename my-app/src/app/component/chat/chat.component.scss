@@ -1,0 +1,135 @@
+.chat-container {
+  width: 80%;
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.btnOff{
+  margin-left: 100px;
+}
+.chat-header {
+  background-color: #66008f;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-body {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.chat-message {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 8px;
+  max-width: 90%;
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+}
+
+.chat-message.user {
+  background-color: #ccf2ff;
+  align-self: flex-end;
+  text-align: right;
+  padding: 8px;
+  width: 300px;
+  border-radius: 10px;
+
+  margin-left: 80px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-message.gpt {
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+  align-self: flex-start;
+  text-align: left;
+  width: 300px;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 5px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-message.error {
+  color: red;
+}
+
+.chat-footer textarea {
+  width: calc(100% - 100px);
+  height: 47px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  resize: none;
+  background: linear-gradient(to top right, #6802a4, #ff003a);
+
+}
+
+.chat-footer button {
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  margin-left: 10px;
+}
+
+.chat-footer button:hover {
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+}
+
+.close-chat-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: auto;
+}
+.close-chat-button:hover {
+  background-color: #c82333;
+}
+
+.close-chat-button:focus {
+  outline: none;
+}
+.chat-message .message-content {
+  margin-bottom: 5px;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  margin-left: 100px;
+  text-align: right;
+}

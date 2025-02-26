@@ -1,0 +1,15 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY pythonProjectOCR8/requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY pythonProjectOCR8 .
+
+EXPOSE 5000
+
+CMD ["python", "OCR4_python.py"]
+
+#docker build -t pythonProjectOCR8:1.0.0 -f DockerfilePython .

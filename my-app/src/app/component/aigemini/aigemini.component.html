@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="container">
+    <header class="chat-header">
+        <h4 class="textchange">gemini chat</h4>
+        <main class="chat-history">
+            <ng-container *ngFor="let item of chatHistory">
+                <div class="user-bot" [ngClass]="{'blue':item.from==='user','purple':item.from ==='bot'}">
+                    <i class="fa"
+                        [ngClass]="{'fa-user-circle':item.from==='user','fa-graduation-cap':item.from==='bot'}"
+                        style="margin-top: 20px;"></i>
+                    <span class="responses" [innerHTML]="formatText(item.message)"></span>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="loading">
+                <div class="name1"> .</div>
+                <div class="name2"> .</div>
+                <div class="name3"> .</div>
+                <div class="name4"> .</div>
+            </ng-container>
+        </main>
+
+    </header>
+    <div class="chat-input">
+        <div class="fixed-footer">
+            <input type="text" class="text-start ps-4" id="message-input" placeholder="  Type your message...."
+                [(ngModel)]="prompt" (keydown.enter)="sendButton.click()" [disabled]="loading" />
+            <button class="btn btn-success" id="send-button" #sendButton (click)="sendData() "
+                [disabled]="loading">Send</button>
+        </div>
+
+    </div>
+</div>

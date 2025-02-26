@@ -1,0 +1,22 @@
+#Build
+FROM maven:3.8.4-openjdk-17-slim AS build
+WORKDIR /app
+COPY myapp /app/myapp
+RUN mvn package -f /app/myapp/pom.xml -DskipTests
+
+#multi-staging
+FROM openjdk:17-slim  
+WORKDIR /app
+COPY --from=build /app/myapp/target/myapp-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/myapp/uploads uploads
+
+EXPOSE 8070
+CMD ["java","-jar","app.jar"]
+
+#docker build -t myapp:1.0.4 -f ./DockerfileJavaSpring .
+#docker login
+#create phi1234/myapp:1.0.4 repository on DockerHub
+#docker tag myapp:1.0.4 phi1234/myapp-spring:1.0.4
+#docker push phi1234/myapp:1.0.4
+
+

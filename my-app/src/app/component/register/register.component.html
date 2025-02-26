@@ -1,0 +1,93 @@
+<!--<app-header></app-header>-->
+<div class="">
+    <div class="row">
+
+        <div class="col-md-6 ">
+            <div class="login-form mx-auto">
+                <h2 class="login-header">Register</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text"
+                           [(ngModel)]="fullName"
+                           name="fullName"
+                           class="form-control" id="fullName" placeholder="fullName" required>
+                    <div class="divider-nospace"></div>
+                </div>
+              <div class="form-group">
+                <label for="date-of-birth">Date of birth</label>
+                <input type="date"
+                       [(ngModel)]="dateOfBirth"
+                       name="dateOfBirth"
+                       class="form-control" id="date-of-birth" required>
+                <div class="divider-nospace"></div>
+                <!-- Check if the user is under 18 years old -->
+                <p class="text-danger" *ngIf="calculateAge(dateOfBirth) < 18">
+                  bạn chưa đủ 18 tuổi
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" [(ngModel)]="phone"
+                       (input)="onPhoneChange()"
+                       name="phone"
+                       id="phone" placeholder="Phone" required>
+                <div class="divider-nospace"></div>
+                <p class="text-danger" *ngIf="phone.length>0&&phone.length<10">số điện thoại phải đủ 10 ký tự</p>
+                <p class="text-danger" *ngIf="phone.length>10">số đện thoại không quá 10 ký tự</p>
+              </div>
+
+                <!-- <div class="mt-5"></div> -->
+                <div class="form-group password-field">
+                    <label for="password">password</label>
+                    <input type="password"
+                           [(ngModel)]="password"
+                           name="password"
+                           placeholder="ít nhất 5 ký tự" class="form-control" id="password" required>
+                    <i class="password-toggle fas fa-eye-slash"></i>
+                    <div class="divider-nospace"></div>
+                  <p class="text-danger" *ngIf="password.length>0&&password.length<5">mật khẩu ít nhất 5 ký tự</p>
+                </div>
+              <form #registerForm="ngForm">
+                <div class="form-group password-field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" placeholder="ít nhất 5 ký tự"
+                           [(ngModel)]="confirmPassword"
+                           name="confirmPassword"
+                           (input)="registerForm.form.markAsTouched(); checkPasswordMatch()"
+                           class="form-control" id="confirmPassword" required>
+                    <i class="password-toggle fas fa-eye-slash"></i>
+                    <div class="divider-nospace"></div>
+                  <p class="text-danger" *ngIf="registerForm.controls['confirmPassword'].hasError('passwordMismatch')"
+                  >Mật khẩu không khớp</p>
+                </div>
+              </form>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text"
+                           [(ngModel)]="address"
+                           name="address"
+                           class="form-control" id="address" placeholder="address" required>
+                    <div class="divider-nospace"></div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check checkbox-text">
+                        <span style="display: flex;">
+                            <input type="checkbox"
+                                   [(ngModel)]="isAccepted"
+                                   name="remember"
+                                   class="form-check-input" id="remember">
+                            <label class="form-check-label text-start" for="remember">
+                                I agree to the terms and conditions</label>
+                        </span>
+                    </div>
+                </div>
+                <button type="button" (click)="onclickRegister()" class="login-button">Next</button>
+                <div class="divider"></div>
+                <p class="text-center">Already have an account? <span>
+                        <a (click)="openFormLoginReturn()" href="javascript:" class="register-link">LOG IN</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<app-footer><x/app-footer>-->

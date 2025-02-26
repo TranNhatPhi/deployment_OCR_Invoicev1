@@ -1,0 +1,148 @@
+.intro-section {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.product-category {
+    width: 200px;
+}
+
+.form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sreach-input {
+    width: 300px;
+    background-color: rgb(19, 23, 42);
+    margin-right: 10px;
+    margin-left: 20px;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    justify-content: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    color: white;
+}
+
+.product-description {
+    color: rgb(173, 178, 203);
+}
+
+.product-warranty {
+    color: rgb(242, 126, 212);
+}
+
+.product-price {
+    color: white;
+}
+
+.product-item {
+    //background-color: rgb(19, 23, 42);
+    background: linear-gradient(to right, rgb(84, 11, 219), rgb(71, 143, 210));
+
+    border: 1px solid rgb(35, 39, 61);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-rating {
+    color: rgb(198, 198, 18);
+    margin-top: 10px;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.space-X {
+    margin: 0 5px;
+}
+
+
+._3JHRC ._2XWD5,
+._3JHRC ._3gFC6 {
+    position: relative;
+    display: flex;
+    border-radius: 12px;
+}
+
+
+._3gFC6 {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+._3gFC6 ._3J9vC ._3sxHF>span {
+    font-size: 12px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    width: 60px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 25px;
+}
+.page-number {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+.page-number.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.chatBtn{
+  position: fixed;
+  top: 320px;
+  right: 24px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  background: linear-gradient(to top right, #4568dc, #b06ab3);
+}
+.alignChat{
+  bottom: 10px;
+  z-index: 0;
+}

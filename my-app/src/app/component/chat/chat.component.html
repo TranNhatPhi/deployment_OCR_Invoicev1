@@ -1,0 +1,22 @@
+<div class="chat-container" *ngIf="showChat">
+  <div class="chat-header">
+    <h4>Chat with GPT-CHATBOT <!--<button (click)="hideChat()" class="btnOff btn btn-danger close-chat-button">X</button>--></h4>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <!-- Initial greeting message -->
+    <div *ngFor="let msg of messages" [ngClass]="{'chat-message': true, 'user': msg.sender === 'user', 'gpt': msg.sender === 'gpt', 'error': msg.sender === 'error'}">
+      <div class="message-content">
+        {{ msg.content }}
+      </div>
+      <div class="timestamp">
+        {{ msg.timestamp | date:'short' }}
+      </div>
+    </div>
+  </div>
+  <div class="chat-footer">
+    <textarea [(ngModel)]="question" (keydown.enter)="sendButton.click()" placeholder="Enter your request here..."></textarea>
+    <button (click)="send()" #sendButton >Send</button>
+  </div>
+</div>
+
+<input type="file" id="fileInput" (change)="onFileSelected($event)" />

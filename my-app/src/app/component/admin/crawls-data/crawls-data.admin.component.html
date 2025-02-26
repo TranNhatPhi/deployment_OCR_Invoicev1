@@ -1,0 +1,34 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3>CrawlsData</h3>
+      <form>
+      <div class="row mb-3">
+          <div class="form-group mb-3">
+            <label for="name">URL:</label>
+            <input type="text" id="name"
+                   [(ngModel)]="param.url"
+                   name="name" class="form-control" required>
+          </div>
+          <div class="form-group mb-3">
+            <label>Loại sản phẩm</label>
+            <select name="cate" class="form-control product-category" [(ngModel)]="param.categoryId1">
+              <option [value]="0"></option>
+              <option *ngFor="let category of categories" [value]="category.id">
+                {{category.name}}
+              </option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-primary" (click)="fucCrawlData()">Crawl Data</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">đợi chút nhé...</p>
+</ngx-spinner>

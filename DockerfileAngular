@@ -1,0 +1,60 @@
+# # Base image, even version for production
+# FROM node:20-alpine3.17 AS builder
+# # Set the working directory
+# WORKDIR /app
+
+# # Copy the package.json and yarn.lock files
+# COPY ./my-app/package.json package.json
+# # COPY ./my-app/yarn.lock yarn.lock
+
+# # Install dependencies using yarn
+# # RUN yarn install --frozen-lockfile
+
+# # Copy the rest of the app's code excluding node_modules
+# COPY ./my-app/ .
+
+# # Build the Angular app in production mode
+# RUN yarn build:production
+
+# # Production-ready image
+# FROM nginx:alpine
+
+# # Copy the built app from the builder stage
+# COPY --from=builder /app/dist/my-app /usr/share/nginx/html
+
+# EXPOSE 80
+
+# # Start Nginx
+# CMD ["nginx", "-g", "daemon off;"]
+
+
+FROM node:20-alpine AS build
+RUN mkdir /app
+WORKDIR /app
+COPY ./my-app/package.json /package.json
+COPY ./my-app/ .
+
+RUN npm install --force
+RUN npm run build 
+
+FROM nginx:latest AS ngi
+COPY --from=build /app/dist/my-app/browser /usr/share/nginx/html/context-path
+# FROM nginx:alpine
+
+# # # Copy the built app from the builder stage
+# COPY --from=builder /app/dist/my-app /usr/share/nginx/html
+
+# expose port 80
+EXPOSE 4200
+
+# run nginx
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+
+#docker build -t my-app:1.0.0 -f DockerfileAngular .
+#docker login
+#create phi1234/my-app:1.0.0 repository on DockerHub
+#docker tag my-app:1.0.0 phi1234/my-app:1.0.0
+#docker push phi1234/my-app:1.0.0
